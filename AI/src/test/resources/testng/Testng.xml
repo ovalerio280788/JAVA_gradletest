@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <parameter name="browser" value="chrome"/>
+
+    <test name="SigInTests">
+        <!-- TEST CASE 01 -->
+        <parameter name="username" value="osvamo280788@gmail.com"/>
+        <parameter name="password" value="Chirin3628448"/>
+
+        <groups>
+            <run>
+                <include name="signin"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.oscar.gradle.testsuite.SignInSuite"/>
+        </classes>
+    </test>
+</suite>
