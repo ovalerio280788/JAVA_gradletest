@@ -12,12 +12,19 @@ import org.testng.annotations.Parameters;
 public class TestCaseBase extends SeleniumBase {
     protected static WebDriver driver;
 
+    /**
+     * This method call another method to start the specified driver before each test case run
+     * @param browser The webdriver to use (FF, Chrome, IE)
+     */
     @BeforeMethod(alwaysRun = true)
     @Parameters({"browser"})
     public void setUp(String browser){
         driver = setup(browser);
     }
 
+    /**
+     * This method calls another method to close the driver after each test case run
+     */
     @AfterMethod(alwaysRun = true)
     protected void quitBrowser(){
         tearDown();

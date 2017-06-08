@@ -38,18 +38,30 @@ public class SeleniumBase {
         return driver;
     }
 
+    /**
+     * This method closes the driver/browser
+     */
     public void tearDown(){
         driver.quit();
     }
 
+    /**
+     * This method creates an instance of chrome driver -- open chrome
+     */
     private void initChrome(){
         this.driver = new ChromeDriver();
     }
 
+    /**
+     * This method creates an instance of internet explorer driver -- open IE
+     */
     private void initIE(){
         this.driver = new InternetExplorerDriver();
     }
 
+    /**
+     * This method creates an instance of firefox driver -- open firefox
+     */
     private void initFireFox(){
         this.driver = new FirefoxDriver();
     }

@@ -26,7 +26,7 @@ public abstract class PageBase extends LoadableComponent {
 
     /**
      * Constructor
-     * @param driver
+     * @param driver The webdriver instance
      */
     public PageBase(WebDriver driver){
         this.driver = driver;

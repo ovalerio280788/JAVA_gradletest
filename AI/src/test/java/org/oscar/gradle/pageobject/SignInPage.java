@@ -21,29 +21,47 @@ public class SignInPage extends PageBase {
 
     /**
      * Constructor
-     *
-     * @param driver
+     * @param driver The webdriver instance
      */
     public SignInPage(WebDriver driver) {
         super(driver);
         this.current_page_url = "https://accounts.google.com/signin";
     }
 
+    /**
+     * This method fill the email/user name field
+     * @param value The username / email
+     * @return An instance of this class
+     */
     public SignInPage fillIdField(String value){
         botStyle.type(identifierId, value);
         return this;
     }
 
+    /**
+     * This method fill the password field
+     * @param value The password value
+     * @return An instance of this class
+     */
     public SignInPage fillPassword(String value){
         botStyle.type(password, value);
         return this;
     }
 
+    /**
+     * This method clicks on the next button
+     * @return An instance of this class
+     */
     public SignInPage clickNext(){
         botStyle.click(identifierNext, 10);
         return this;
     }
 
+    /**
+     * This method clicks on the next button and do the login procces, tha means that have to retunr an .
+     * instance of the following page
+     * @return A new Inbox page instance
+     */
     public InboxPage login(){
         botStyle.click(identifierNext, 10);
         botStyle.click(options, 10);

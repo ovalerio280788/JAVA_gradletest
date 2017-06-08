@@ -10,11 +10,11 @@ import org.testng.Assert;
  */
 public class InboxPage extends PageBase {
     @FindBy(css = "[href='https://mail.google.com/mail/u/0/#inbox']")
-    WebElement inbox;
+    private WebElement inbox;
+
     /**
-     * Constructor
-     *
-     * @param driver
+     * Constructor     *
+     * @param driver The webdriver instance
      */
     public InboxPage(WebDriver driver) {
         super(driver);

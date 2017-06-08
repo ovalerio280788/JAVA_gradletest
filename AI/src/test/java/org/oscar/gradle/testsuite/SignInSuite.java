@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  */
 public class SignInSuite extends TestCaseBase{
 
-    @Test(groups = "signin")
+    @Test(groups = {"full_regression","login"})
     @Parameters({"username", "password"})
     public void ValidLoginTest(String userName, String passWord) throws InterruptedException {
         SignInPage signInPage = (SignInPage) new SignInPage(driver).get();
