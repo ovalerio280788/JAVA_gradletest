@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
  * created by oscar on 4/6/2017.
  */
 public class SeleniumBase {
+
     private WebDriver driver;
 
     /**
@@ -64,5 +65,9 @@ public class SeleniumBase {
      */
     private void initFireFox(){
         this.driver = new FirefoxDriver();
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }

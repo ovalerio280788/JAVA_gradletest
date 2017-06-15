@@ -13,7 +13,7 @@ public class SignInSuite extends TestCaseBase{
     @Test(groups = {"full_regression","login"})
     @Parameters({"username", "password"})
     public void ValidLoginTest(String userName, String passWord) throws InterruptedException {
-        SignInPage signInPage = (SignInPage) new SignInPage(driver).get();
+        SignInPage signInPage = (SignInPage) new SignInPage(getDriver()).get();
         signInPage.fillIdField(userName);
         Thread.sleep(1000);
         signInPage.clickNext();

@@ -5,28 +5,47 @@
 
     <!--LISTENERS-->
     <listeners>
-        <listener class-name="org.oscar.gradle.framework.CustomListener" />
+        <listener class-name="org.oscar.gradle.framework.testng.CustomListener" />
     </listeners>
 
     <!-- GLOBAL PARAMETERS -->
     <parameter name="browser" value="chrome"/>
+    <parameter name="tr_base_url" value="http://testrail.zenoss.loc/"/>
+    <parameter name="tr_project" value="Control Center"/>
+    <parameter name="tr_user" value="ovalerio@zenoss.com"/>
+    <parameter name="tr_password" value=""/>
 
     <!-- TESTS -->
     <test name="SigInTests">
+        <parameter name="tr_test_plan_name" value="oscar_test01"/>
+        
         <!-- TEST CASE 01 -->
         <parameter name="username" value="osvamo280788@gmail.com"/>
-        <parameter name="password" value="Chirin3628448"/>
+        <parameter name="password" value=""/>
+
+        <!-- TEST CASE 02 -->
+        <parameter name="testcase02_id" value="C1816"/>
+
+        <!-- TEST CASE 03 -->
+        <parameter name="testcase03_id" value="C1817"/>
+
+        <!-- TEST CASE 04 -->
+        <parameter name="testcase04_id" value="C1818"/>
+
+        <!-- TEST CASE 05 -->
+        <parameter name="testcase05_id" value="C1819"/>
 
         <!-- WHAT TO RUN -->
         <groups>
             <run>
-                <include name="full_regression"/>
+                <include name="testrail"/>
             </run>
         </groups>
 
         <!-- CLASS FILES -->
         <classes>
             <class name="org.oscar.gradle.testsuite.SignInSuite"/>
+            <class name="org.oscar.gradle.testsuite.TestRailSuite"/>
         </classes>
     </test>
 </suite>
